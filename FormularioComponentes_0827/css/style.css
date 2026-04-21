@@ -1,0 +1,56 @@
+/* Importamos la fuente que pide tu Figma */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #293325;
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    width: 500px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #39542C;
+    border-top: 15px solid #4CBB17; 
+}
+
+h1 {
+    color: #39542C;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #48872B;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #293325;
+}
+
+button {
+    background-color: #4CBB17;
+    color: white;
+    border: 1px solid #293325;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 95%;
+    font-weight: bold;
+}
+
+button:active {
+    background-color: #48872B;
+}
+
+.datos-alumno {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #293325;
+}
