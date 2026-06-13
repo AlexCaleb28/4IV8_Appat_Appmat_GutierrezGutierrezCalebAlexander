@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas</title>
+    <link rel="stylesheet" href="./css/juego.css">
+</head>
+<body>
+    <div class="col-40">
+        <div id="titulo">
+            <h1>Rompecabezas</h1>
+            <div id="iniciarButton" onclick="mezclarRompecabezas(30)">
+                Mezclar de Nuevo
+            </div>
+            <div id="instrucciones">
+                <h2>Instrucciones</h2>
+                <ul id="lista-instrucciones"></ul>
+            </div>
+            <div id="objetivo">
+                <h2>Objetivo del Juego</h2>
+                <div class="texto-centrado">
+                    <p>completa correctamente la imagen</p>
+                </div>
+            </div>
+            <div id="ultimo-mov">
+                <h2>Último Movimiento</h2>
+                <div id="flecha" class="texto-centrado"></div>
+            </div>
+        </div>
+        <div class="col-60">
+            <div id="juego">
+                <div id="pieza1" class="piezas"><img src="./images/1.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza2" class="piezas"><img src="./images/2.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza3" class="piezas"><img src="./images/3.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza4" class="piezas"><img src="./images/4.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza5" class="piezas"><img src="./images/5.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza6" class="piezas"><img src="./images/6.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza7" class="piezas"><img src="./images/7.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza8" class="piezas"><img src="./images/8.jpg" alt="No se encuentra el recurso"></div>
+                <div id="pieza9" class="piezas"></div>
+            </div>
+        </div>
+    </div>
+    <h2><a href="../index.html">Regresar al index</a></h2>
+    <script src="./js/rompecabezas.js"></script>
+</body>
+</html>
