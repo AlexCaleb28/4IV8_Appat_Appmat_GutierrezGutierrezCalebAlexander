@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Billar Pro</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #f4f6f9; color: #333; padding: 20px; }
+        .header { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; margin-top: 10px; }
+        .ball-icon { background: #3b2a54; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; }
+        .header h1 { font-size: 28px; color: #222; }
+        
+        .dashboard { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
+            gap: 25px; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+
+        @media (max-width: 900px) {
+            .dashboard { grid-template-columns: 1fr; }
+        }
+
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 20px; border-top: 4px solid #2b4c7e; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .card-title { font-size: 18px; font-weight: bold; text-align: center; width: 100%; margin-bottom: 10px; color: #111; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; text-align: center; }
+        th, td { padding: 12px 10px; border: 1px solid #eef2f5; }
+        th { background-color: #f8fafc; color: #666; font-weight: 600; }
+        .btn { padding: 6px 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s; font-size: 13px; }
+        .btn-blue { background-color: #007bff; color: white; }
+        .btn-blue:hover { background-color: #0056b3; }
+        .btn-red { background-color: #dc3545; color: white; }
+        .btn-red:hover { background-color: #bd2130; }
+        .btn-green { background-color: #28a745; color: white; }
+        .btn-green:hover { background-color: #218838; }
+        .btn-orange { background-color: #ff9800; color: white; }
+        .btn-orange:hover { background-color: #e68a00; }
+        .btn-purple { background-color: #6f42c1; color: white; }
+        .btn-purple:hover { background-color: #59339d; }
+        .status-disponible { color: #28a745; font-weight: bold; }
+        .status-ocupada { color: #dc3545; font-weight: bold; }
+        .empty-msg { color: #888; font-style: italic; padding: 15px; text-align: center; }
+        .action-group { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="ball-icon">8</div>
+        <h1>Sistema - Billar</h1>
+    </div>
+
+    <div class="dashboard">
+        <div class="card">
+            <div class="card-title">1. Estado de Mesas</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mesa</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-mesas"></tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">2. Control de Tiempo (Ocupadas)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mesa</th>
+                        <th>Hora Inicio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-rentas"></tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="display: flex; width: 100%;">
+                <div class="card-title" style="margin: 0; text-align: left;">3. Catálogo de Rentas (Equipo)</div>
+                <button class="btn btn-blue" id="btnAgregarProducto">+ Nuevo Artículo</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Artículo</th>
+                        <th>Disp.</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-productos"></tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">4. Registro de Rentas de Equipo</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Artículo Rentado</th>
+                        <th>Cant.</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-ventas"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
